@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Leaderboard renders Leaderboard 1`] = `
+<div>
+  <div
+    class="css-1jwrk01"
+  >
+    <div
+      class="css-vgi5vz"
+    >
+      <p
+        class="chakra-text css-th6fur"
+      >
+        Top 10 Players
+      </p>
+      <div
+        class="css-18dv5jq"
+      >
+        <button
+          class="chakra-button css-1q0r9gq"
+          type="button"
+        >
+          <p
+            class="chakra-text css-1hgmzub"
+          >
+            Retry
+          </p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

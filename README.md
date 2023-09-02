@@ -1,6 +1,7 @@
 # How to run the project
 
-1. npm run start
+1. npm install
+2. npm run start
 
 ## TODOS
 
@@ -8,6 +9,7 @@
 2. i18n so we don't have static texts
 3. add breakpoints
 4. check performance improvements
+5. contrast on leaderboard to make it more accessible
 
 ## Notes
 
