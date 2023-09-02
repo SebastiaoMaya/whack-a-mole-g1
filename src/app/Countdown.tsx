@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useInterval } from "usehooks-ts";
-import { decrementTimer, endGame } from "../store/gameSlice";
-import { getIsPlaying, getTimer } from "../store/selectors";
+import { decrementTimer, endGame } from "store/gameSlice";
+import { getIsPlaying, getTimer } from "store/selectors";
 import { Text } from "@chakra-ui/react";
 import { useMemo } from "react";
 import styled from "@emotion/styled";

@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { resetGameState, startGame } from "../store/gameSlice";
+import { resetGameState, startGame } from "store/gameSlice";
 import { Button, Text } from "@chakra-ui/react";
-import { getIsFinished, getIsPlaying } from "../store/selectors";
+import { getIsFinished, getIsPlaying } from "store/selectors";
 
 interface Props {
   retry?: boolean;

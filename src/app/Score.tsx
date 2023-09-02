@@ -1,6 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { getScore } from "../store/selectors";
+import { getScore } from "store/selectors";
 
 export const Score = () => {
   const score = useSelector(getScore);

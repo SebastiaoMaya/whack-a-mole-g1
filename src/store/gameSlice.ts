@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { GAME_DURATION_IN_SECONDS } from "../app/constants";
-import { Player } from "../app/interfaces";
+import { GAME_DURATION_IN_SECONDS } from "app/constants";
+import { Player } from "app/interfaces";
 import { sortLeaderboard } from "./utils";
 
 export interface GameSliceState {

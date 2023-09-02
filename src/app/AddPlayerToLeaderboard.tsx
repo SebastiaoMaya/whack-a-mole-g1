@@ -1,11 +1,11 @@
 import { Button, Flex, Input, Text } from "@chakra-ui/react";
 import React, { useCallback, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPlayerName, getScore } from "../store/selectors";
-import { addPlayerToLeaderboard, changePlayerName } from "../store/gameSlice";
+import { getPlayerName, getScore } from "store/selectors";
+import { addPlayerToLeaderboard, changePlayerName } from "store/gameSlice";
 import { v4 as uuidv4 } from "uuid";
 import { Player } from "./interfaces";
-import { addPlayerToLeaderboardApi } from "../network/api";
+import { addPlayerToLeaderboardApi } from "network/api";
 
 export const AddPlayerToLeaderboard = () => {
   const initPlayerName = useSelector(getPlayerName);

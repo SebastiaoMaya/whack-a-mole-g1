@@ -4,7 +4,7 @@ import { COLUMNS } from "./constants";
 import { v4 as uuidv4 } from "uuid";
 import { GameInfo } from "./GameInfo";
 import { useSelector } from "react-redux";
-import { getIsFinished } from "../store/selectors";
+import { getIsFinished } from "store/selectors";
 import { Leaderboard } from "./Leaderboard";
 
 export const Board = () => {

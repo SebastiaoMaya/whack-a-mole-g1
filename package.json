@@ -29,13 +29,18 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "@types/uuid": "^9.0.3",
-    "concurrently": "^8.2.1"
+    "babel-jest": "^29.6.4",
+    "concurrently": "^8.2.1",
+    "jest": "^27.5.1",
+    "jest-styled-components": "^7.1.1"
   },
   "scripts": {
     "start": "concurrently \"json-server --watch db.json --port 3030\" \"react-scripts start\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --outputFile reports/test-report.xml --no-cache",
+    "test:updateSnapshot": "jest --updateSnapshot --outputFile reports/test-report.xml",
+    "eject": "react-scripts eject",
+    "clear_jest": "jest --clearCache"
   },
   "eslintConfig": {
     "extends": [

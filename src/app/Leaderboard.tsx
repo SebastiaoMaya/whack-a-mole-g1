@@ -1,6 +1,6 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
-import { getLeaderboard, getScore } from "../store/selectors";
+import { getLeaderboard, getScore } from "store/selectors";
 import { LeaderboardPlayer } from "./LeaderboardPlayer";
 import { useMemo } from "react";
 import { AddPlayerToLeaderboard } from "./AddPlayerToLeaderboard";

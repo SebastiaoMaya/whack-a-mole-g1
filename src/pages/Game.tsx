@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import { Board } from "../app/Board";
+import { Board } from "app/Board";
 import { useCallback, useEffect } from "react";
-import { initLeaderboard } from "../store/gameSlice";
-import { getLeaderboardApi } from "../network/api";
+import { initLeaderboard } from "store/gameSlice";
+import { getLeaderboardApi } from "network/api";
 
 export const Game = () => {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ export const Game = () => {
     } catch (e) {
       console.error(e);
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     getLeaderboard();

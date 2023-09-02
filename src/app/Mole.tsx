@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Flex, Image } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { useInterval } from "usehooks-ts";
-import { getRndInteger } from "../utils";
+import { getRndInteger } from "utils";
 import {
   MAX_UNDERGROUND_DURATION_MS,
   MAX_VISIBILITY_DURATION_MS,
@@ -10,8 +10,8 @@ import {
   MIN_VISIBILITY_DURATION_MS,
 } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
-import { decrementScore, incrementScore } from "../store/gameSlice";
-import { getIsPlaying, getScore } from "../store/selectors";
+import { decrementScore, incrementScore } from "store/gameSlice";
+import { getIsPlaying, getScore } from "store/selectors";
 
 const StyledImage = styled(Image)`
   width: 100px;
