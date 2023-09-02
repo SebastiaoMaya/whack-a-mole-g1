@@ -28,10 +28,11 @@
     "@types/node": "^16.18.47",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@types/uuid": "^9.0.3"
+    "@types/uuid": "^9.0.3",
+    "concurrently": "^8.2.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"json-server --watch db.json --port 3030\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

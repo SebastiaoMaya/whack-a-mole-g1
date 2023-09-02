@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Flex, Image } from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import { useInterval } from "usehooks-ts";
@@ -10,8 +10,8 @@ import {
   MIN_VISIBILITY_DURATION_MS,
 } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../store/gameSlice";
-import { getScore } from "../store/selectors";
+import { decrementScore, incrementScore } from "../store/gameSlice";
+import { getIsPlaying, getScore } from "../store/selectors";
 
 const StyledImage = styled(Image)`
   width: 100px;
@@ -21,14 +21,19 @@ export const Mole: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const score = useSelector(getScore);
+  const isPlaying = useSelector(getIsPlaying);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    !isPlaying && setIsVisible(false);
+  }, [isPlaying]);
 
   const whack = () => {
     if (isVisible) {
-      dispatch(increment());
+      dispatch(incrementScore());
       setIsVisible(false);
     } else {
-      score >= 1 && dispatch(decrement());
+      score >= 1 && dispatch(decrementScore());
     }
   };
 
@@ -57,10 +62,14 @@ export const Mole: React.FC = () => {
     []
   );
 
-  useInterval(popToggle, delay);
+  useInterval(popToggle, isPlaying ? delay : null);
 
   return (
-    <Flex onClick={whack} height="85px" alignItems="flex-end">
+    <Flex
+      onClick={isPlaying ? whack : undefined}
+      height="85px"
+      alignItems="flex-end"
+    >
       {isVisible ? mole : hole}
     </Flex>
   );

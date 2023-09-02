@@ -5,7 +5,7 @@ import { getScore } from "../store/selectors";
 export const Score = () => {
   const score = useSelector(getScore);
   return (
-    <Flex direction="column">
+    <Flex direction="column" alignItems="center">
       <Text
         fontSize={"3xl"}
         color="red"
