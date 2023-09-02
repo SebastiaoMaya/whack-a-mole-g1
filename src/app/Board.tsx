@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Box } from "@chakra-ui/react";
 import { Column } from "./Column";
 import { COLUMNS } from "./constants";
 import { v4 as uuidv4 } from "uuid";
@@ -10,7 +10,7 @@ import { Leaderboard } from "./Leaderboard";
 export const Board = () => {
   const isGameFinished = useSelector(getIsFinished);
   return (
-    <>
+    <Box userSelect="none">
       <Flex
         backgroundImage="url('/WAM_bg.jpg')"
         backgroundPosition="center"
@@ -37,6 +37,6 @@ export const Board = () => {
         </Flex>
       </Flex>
       {isGameFinished && <Leaderboard />}
-    </>
+    </Box>
   );
 };
