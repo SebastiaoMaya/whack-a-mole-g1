@@ -43,15 +43,25 @@ export const Mole: React.FC = () => {
     [isVisible]
   );
 
+  const hole = useMemo(
+    () => (
+      <StyledImage src={"/WAM_Hole.png"} draggable={false} userSelect="none" />
+    ),
+    []
+  );
+
+  const mole = useMemo(
+    () => (
+      <StyledImage src={"/WAM_Mole.png"} draggable={false} userSelect="none" />
+    ),
+    []
+  );
+
   useInterval(popToggle, delay);
 
   return (
     <Flex onClick={whack} height="85px" alignItems="flex-end">
-      <StyledImage
-        src={isVisible ? "/WAM_Mole.png" : "/WAM_Hole.png"}
-        draggable={false}
-        userSelect="none"
-      />
+      {isVisible ? mole : hole}
     </Flex>
   );
 };

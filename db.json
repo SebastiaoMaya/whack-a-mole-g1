@@ -1,0 +1,14 @@
+{
+  "leaderboard": [
+    {
+      "id": 1,
+      "name": "Best player of all time",
+      "score": 200
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "score": 100
+    }
+  ]
+}
