@@ -59,7 +59,10 @@ export const gameSlice = createSlice({
         action.payload,
       ]);
     },
-    resetGameState: () => initialState,
+    resetGameState: (state) => ({
+      ...initialState,
+      leaderboard: state.leaderboard,
+    }),
   },
 });
 

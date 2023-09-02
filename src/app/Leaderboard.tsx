@@ -3,13 +3,17 @@ import { useSelector } from "react-redux";
 import { getLeaderboard, getScore } from "../store/selectors";
 import { LeaderboardPlayer } from "./LeaderboardPlayer";
 import { useMemo } from "react";
+import { AddPlayerToLeaderboard } from "./AddPlayerToLeaderboard";
+import { StartGameBtn } from "./StartGameBtn";
 
 export const Leaderboard = () => {
   const leaderboard = useSelector(getLeaderboard);
   const currentScore = useSelector(getScore);
   const top10 = useMemo(() => leaderboard.slice(0, 10), [leaderboard]);
-
-  //const currentPlayerLeaderBoardPosition = useMemo(()=>, [currentScore, top10])
+  const isPlayerInLeaderboard = useMemo(
+    () => top10.some(({ score }) => score < currentScore),
+    [currentScore, top10]
+  );
 
   return (
     <Flex
@@ -35,6 +39,10 @@ export const Leaderboard = () => {
               {...rest}
             />
           ))}
+        {isPlayerInLeaderboard && <AddPlayerToLeaderboard />}
+        <Flex justifyContent="flex-end" mt="4">
+          <StartGameBtn retry={true} />
+        </Flex>
       </Flex>
     </Flex>
   );
