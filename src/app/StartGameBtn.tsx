@@ -31,6 +31,7 @@ export const StartGameBtn: React.FC<Props> = ({ retry }) => {
       width="60px"
       height="60px"
       onClick={handleOnClick}
+      role="button"
     >
       <Text fontSize="lg" fontWeight="bold">
         {isPlaying || retry ? "Retry" : "Start"}

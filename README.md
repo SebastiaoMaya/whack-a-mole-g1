@@ -10,6 +10,7 @@
 3. add breakpoints
 4. check performance improvements
 5. contrast on leaderboard to make it more accessible
+6. do more tests and have more test coverage
 
 ## Notes
 
